@@ -1,3 +1,4 @@
+-- Place in ~/.config/termit/ folder
 require("termit.colormaps")
 require("termit.utils")
 
