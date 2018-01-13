@@ -1,0 +1,13 @@
+#!/bin/bash
+# Shell script to display nag warning while battery level < 30. Cron runs every 10 mins.
+# Place */10 * * * * /usr/local/bin/battery_check in crontab
+
+bat_state=$(upower -i $(upower -e | grep 'BAT') | grep 'state' | cut -c 26-)
+bat_percentage=$(upower -i $(upower -e | grep 'BAT') | grep 'percentage' | cut -c 26-27)
+message="Warning, battery only at $bat_percentage%. Plug your charger in!"
+
+if [[ $bat_state != 'fully-charged' && $bat_state != 'charging' ]]; then
+  if [[ (($bat_percentage < 30)) ]]; then
+    DISPLAY=:0.0 /usr/bin/notify-send "$message"
+  fi
+fi
