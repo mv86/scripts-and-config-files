@@ -5,8 +5,6 @@
 # this file and re-run i3-config-wizard(1).
 #
 
-#  exec /home/max/bin/disable_laptop_moniter.sh
-
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -126,7 +124,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 assign [class="Google-chrome"] $workspace3
 assign [class="boost"] $workspace4
-# assign [class="Sublime_text"] $workspace5
+assign [class="Sublime_text"] $workspace5
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -167,8 +165,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 exec google-chrome
-# exec boostnote
-# exec subl
-exec termit
+exec boostnote
+exec subl
 
 exec_always feh --bg-scale ~/Downloads/fourtet.jpg
