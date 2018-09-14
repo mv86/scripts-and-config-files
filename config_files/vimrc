@@ -1,4 +1,4 @@
-" TODO Make ~/.vim/tmp/ dir on new machine
+" TODO Make ~/.vim/tmp/ dir on new machine & install ripgrep
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -44,6 +44,7 @@ set splitbelow          " :sp puts new screen below
 set splitright          " :vs puts new screen to the right
 set fileformat=unix     " avoid conversion issues when sharing
 set encoding=utf-8      " standadise to utf-8
+set updatetime=100      " Update gitgutter etc more regularly
 
 " Remove trailing whitespace with <F5>
 :nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
@@ -62,6 +63,10 @@ let g:lightline = {
         \ }
 set laststatus=2
 set noshowmode          " hide as using lightline status bar
+
+
+" vim-multiple-cursors setting
+let g:multi_cursor_skip_key = '<C-m>'
 
 
 " ALE setting
@@ -150,3 +155,9 @@ if has("autocmd")
 else
   set autoindent		" always set autoindenting on
 endif " has("autocmd")
+
+
+" Test key mappings
+
+" Ctrl-u makes word upper case
+:inoremap <c-u> <esc>viwUwi
