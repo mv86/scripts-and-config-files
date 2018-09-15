@@ -1,4 +1,3 @@
--- Place in ~/.config/termit/ folder
 require("termit.colormaps")
 require("termit.utils")
 
@@ -9,7 +8,7 @@ defaults.hideTitlebarWhenMaximized = true
 defaults.tabName = 'Terminal'
 defaults.encoding = 'UTF-8'
 defaults.wordCharExceptions = '- .,_/'
-defaults.font = 'Monospace 18'
+defaults.font = 'Monospace 13'
 --defaults.foregroundColor = 'gray'
 --defaults.backgroundColor = 'black'
 defaults.showScrollbar = true
@@ -28,3 +27,6 @@ defaults.cursorShape = 'Ibeam'
 defaults.tabPos = 'Right'
 defaults.colormap = termit.colormaps.delicate
 setOptions(defaults)
+
+bindKey('Ctrl-t', nil)       -- Don't clash with fzf
+bindKey('Ctrl-n', openTab)
