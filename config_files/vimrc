@@ -120,10 +120,12 @@ inoremap jj <esc>
 runtime macros/matchit.vim
 
 " remap leader key to space
-let mapleader = "<space>"
+let mapleader = "\<space>"
 
-" fzf (fuzzy find) shortcut
-map fzf :Files<CR>
+" fzf (fuzzy find) shortcuts
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>l :Lines<CR>
+nnoremap <leader>g :GFiles<CR>
 
 
 " PYTHON Specific
@@ -131,7 +133,7 @@ au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    \ set textwidth=79 |
+    \ set textwidth=99 |
 
 
 " JS, HTML, CSS Specific
