@@ -1,4 +1,4 @@
-" TODO Make ~/.vim/tmp/ dir on new machine & install ripgrep
+" TODO Make ~/.vim/tmp/ dir on new machine & install ripgrep and fd
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
